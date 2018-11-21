@@ -19,7 +19,13 @@
 		<aop:pointcut id="mypoint" expression="execution(* com.cust..*Biz.*(..))" />
 		
 		<aop:aspect ref="logadvice2">
-			<aop:around pointcut-ref="mypoint" method="aroundLogger"/>
+			<aop:around 
+				pointcut-ref="mypoint"
+				method="aroundLogger"/>
+			<aop:after-throwing 
+				pointcut-ref="mypoint"
+				method="exLogger"
+				throwing="ex"/>
 		</aop:aspect>
 		
 		<!--

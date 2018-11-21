@@ -13,7 +13,7 @@ public class App {
 		
 		Biz biz = (Biz) factory.getBean("cbiz");
 		
-		Cust cust = new Cust("id01", "pw01", "jsy", 10);
+		Cust cust = new Cust("id02", "pw01", "jsy", 10);
 		
 		try {
 			biz.register(cust);

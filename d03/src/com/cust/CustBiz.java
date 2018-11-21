@@ -32,11 +32,10 @@ public class CustBiz implements Biz<String, Cust> {
 	@Override
 	public void register(Cust v) throws Exception{
 		if(v.getId().equals("id01")) {
-			throw new Exception();
+			throw new Exception("Duplicated ID Exception!!");
 		}else {
 			dao.insert(v);
 		}
-		dao.insert(v);
 	}
 
 	@Override
