@@ -15,15 +15,11 @@
 	<bean id="logadvice2" class="com.frame.LogAdvice2"/>
 	
 	<aop:config>
-		<!-- <aop:pointcut id="mypoint" expression="execution(!void com..Biz+.*(..))" /> -->
 		
 		<aop:pointcut id="mypoint" expression="execution(* com.cust..*Biz.*(..))" />
 		
-		<aop:aspect ref="logadvice">
-			<aop:after-returning pointcut-ref="mypoint" method="logger" returning="obj"/>
-		</aop:aspect>
 		<aop:aspect ref="logadvice2">
-			<aop:after-throwing pointcut-ref="mypoint" method="logger"/>
+			<aop:around pointcut-ref="mypoint" method="aroundLogger"/>
 		</aop:aspect>
 		
 		<!--

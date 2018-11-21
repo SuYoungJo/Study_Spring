@@ -1,7 +1,5 @@
 package com.frame;
 
-import java.util.Date;
-
 import org.aspectj.lang.JoinPoint;
 
 public class LogAdvice {

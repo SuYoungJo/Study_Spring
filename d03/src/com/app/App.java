@@ -1,7 +1,5 @@
 package com.app;
 
-import java.util.ArrayList;
-
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
