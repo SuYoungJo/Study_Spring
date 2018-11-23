@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org/DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.vo.Emps" alias="emps"/>
+	    <typeAlias type="com.vo.Depts" alias="depts"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="com/mybatis/config/empsmapper.xml"/>
+		<mapper resource="com/mybatis/config/deptsmapper.xml"/>
+	</mappers>
+</configuration>
+
+
+
+
+
+

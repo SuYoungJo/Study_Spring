@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.mapper.EmpsMapper">
+
+	
+	<select id="select" parameterType="String" 
+	resultType="emps">
+		SELECT e.EID as ID,
+		e.NAME as NAME,
+		e.SALARY as SALARY,
+		e.HIREDATE as HIREDATE,
+		d.NAME as DNAME 
+		FROM EMPS e, DEPTS d
+		WHERE e.DID = d.ID
+		AND e.EID = #{id}
+
+	</select>
+	<select id="selectall" resultType="emps">
+		SELECT e.EID as ID,
+		e.NAME as NAME,
+		e.SALARY as SALARY,
+		e.HIREDATE as HIREDATE,
+		d.NAME as DNAME 
+		FROM EMPS e, DEPTS d
+		WHERE e.DID = d.ID
+	</select>
+	<insert id="insert" parameterType="emps">
+		INSERT INTO EMPS VALUES (#{id},#{name},#{salary},SYSDATE,#{did})
+	</insert>
+	<update id="update" parameterType="emps">
+		UPDATE EMPS SET EID=#{id},NAME=#{name},SALARY=#{salary},DID=#{did} WHERE EID=#{id}
+	</update>
+	<delete id="delete" parameterType="String">
+		DELETE FROM EMPS WHERE EID=#{id}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+

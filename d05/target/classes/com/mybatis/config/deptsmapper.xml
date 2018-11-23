@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.mapper.DeptsMapper">
+	
+	<select id="select" parameterType="Integer" 
+	resultType="depts">
+		SELECT * FROM DEPTS WHERE ID=#{id}
+	</select>
+	<select id="selectall" resultType="depts">
+		SELECT * FROM DEPTS
+	</select>
+	<insert id="insert" parameterType="depts">
+		INSERT INTO DEPTS VALUES (PRO_SEQ.NEXTVAL,#{name},#{location})
+	</insert>
+	<update id="update" parameterType="depts">
+		UPDATE DEPTS SET NAME=#{name},LOCATION=#{location} WHERE ID=#{id}
+	</update>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM DEPTS WHERE ID=#{id}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+
