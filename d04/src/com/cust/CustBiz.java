@@ -25,6 +25,7 @@ public class CustBiz implements Biz<String, Cust> {
 	@Override
 	public void register(Cust v) {
 		dao.insert(v);
+		dao.insert(v);
 	}
 
 	@Override
